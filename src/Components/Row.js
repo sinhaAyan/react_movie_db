@@ -1,6 +1,7 @@
 import axios from '../axios';
 import React, { useEffect, useState } from 'react';
 import './row.css';
+import { Link } from 'react-router-dom';
 
 
 function Row({ title, fetchUrl }) {
@@ -22,13 +23,16 @@ function Row({ title, fetchUrl }) {
             <h2>{title}</h2>
             <div className="row_posters">
                 {movies.map(item => (
-                    <img key={item.id}
-                        className="row_poster"
-                        src={`${base_URL}${item.poster_path}`}
-                        alt={item.name} onClick={() => {
-                            console.log("movie ID:>>>>> ", item.id);
-                        }}
-                    />
+                    <Link to={`/movies/${item.id}`}>
+                        <img key={item.id}
+                            className="row_poster"
+                            src={`${base_URL}${item.poster_path}`}
+                            alt={item.name} onClick={() => {
+                                console.log("movie ID:>>>>> ", item.id);
+                            }}
+                        />
+                    </Link>
+
                 ))}
             </div>
         </div>
