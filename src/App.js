@@ -10,12 +10,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/movies/:id">
-            <MovieDetails />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/movie/:id" component={MovieDetails} />
         </Switch>
       </div>
     </Router>

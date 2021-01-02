@@ -1,0 +1,28 @@
+.movieDetails{
+}
+.movieDetails_hero{
+    height: 590px;
+}
+.movieDetails_poster{
+    width: 300px;
+    height: 500px;
+    border: none;
+    border-radius: 2%;
+    position: absolute;
+    top: 6%;
+    left: 10%;
+}
+
+.movieDetails_description{
+    position: absolute;
+    top:20%;
+    left: 33%;
+}
+
+.movieDetails_tagline{
+    margin: 30px 0;
+}
+
+.movieDetails_overview{
+     max-width: 800px;
+}

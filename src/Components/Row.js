@@ -17,13 +17,13 @@ function Row({ title, fetchUrl }) {
         }
         fetchData();
     }, [fetchUrl]);
-
+    //console.log(movies);
     return (
         <div className="row">
             <h2>{title}</h2>
             <div className="row_posters">
                 {movies.map(item => (
-                    <Link to={`/movies/${item.id}`}>
+                    <Link to={`/movie/${item.id}`}>
                         <img key={item.id}
                             className="row_poster"
                             src={`${base_URL}${item.poster_path}`}
