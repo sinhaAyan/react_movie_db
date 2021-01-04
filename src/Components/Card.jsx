@@ -6,7 +6,7 @@ function Card({ castDetails }) {
     return (
         <div className="card">
             <img className="card_image" src={`${imageBase_URL}${castDetails.profile_path}`} alt="" />
-            <div className="card_name">
+            <div className="card_container">
                 <h3>{castDetails.name}</h3>
                 <p>{castDetails.character}</p>
             </div>
