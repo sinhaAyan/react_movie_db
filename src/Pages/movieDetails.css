@@ -26,3 +26,7 @@
 .movieDetails_overview{
      max-width: 800px;
 }
+
+.movieDetails_director{
+    margin: 30px 0;
+}

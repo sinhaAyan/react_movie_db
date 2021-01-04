@@ -5,18 +5,33 @@ import "./movieDetails.css"
 
 function MovieDetails({ match }) {
     let params = match.params;
+
     const [details, setDetails] = useState({});
+    const [casts, setCasts] = useState([]);
+    const [crews, setCrews] = useState([]);
+    const [similarMovies, setSimilarMovies] = useState([]);
 
     useEffect(() => {
         async function fetchMovieDetails() {
             const response = await axios.get(`movie/${params.id}?api_key=${API_KEY}&language=en-US`);
-            setDetails(response?.data);
+            setDetails(response.data);
+
+            const castAndCrew = await axios.get(`movie/${params.id}/credits?api_key=${API_KEY}&language=en-US`);
+            //console.log(castAndCrew);
+            setCasts(castAndCrew.data.cast);
+            setCrews(castAndCrew.data.crew);
         }
         fetchMovieDetails();
     }, []);
-    console.log(details);
+    //console.log(casts);
+    //console.log(crews);
     function yearOnly(date) {
         return new Date(date).getFullYear();
+    }
+
+    function findDirector() {
+        let obj = crews.find(crew => (crew.department === 'Directing'))
+        return obj?.name;
     }
 
     return (
@@ -49,8 +64,15 @@ function MovieDetails({ match }) {
                     <h2>overview</h2>
                     <p className="movieDetails_overview">{details?.overview}</p>
 
+                    <section className="movieDetails_director">
+                        <h2 >{findDirector()}</h2>
+                        <p>Director</p>
+                    </section>
                 </div>
+            </div>
 
+            <div className="movieDetails_cast">
+                <h1>Top Billed Cast</h1>
             </div>
 
 

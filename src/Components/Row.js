@@ -27,9 +27,7 @@ function Row({ title, fetchUrl }) {
                         <img key={item.id}
                             className="row_poster"
                             src={`${base_URL}${item.poster_path}`}
-                            alt={item.name} onClick={() => {
-                                console.log("movie ID:>>>>> ", item.id);
-                            }}
+                            alt={item.name}
                         />
                     </Link>
 
