@@ -30,3 +30,15 @@
 .movieDetails_director{
     margin: 30px 0;
 }
+
+.movieDetails_cast{
+    margin: 30px 150px;
+}
+
+.movieDetails_castRow{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 10px;
+    width: 800px;
+}

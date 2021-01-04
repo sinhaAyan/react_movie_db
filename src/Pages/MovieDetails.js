@@ -2,6 +2,7 @@ import axios from '../axios';
 import React, { useEffect, useState } from 'react'
 import { API_KEY, imageBase_URL } from '../request';
 import "./movieDetails.css"
+import Card from '../Components/Card';
 
 function MovieDetails({ match }) {
     let params = match.params;
@@ -23,7 +24,7 @@ function MovieDetails({ match }) {
         }
         fetchMovieDetails();
     }, []);
-    //console.log(casts);
+    console.log(casts);
     //console.log(crews);
     function yearOnly(date) {
         return new Date(date).getFullYear();
@@ -73,6 +74,10 @@ function MovieDetails({ match }) {
 
             <div className="movieDetails_cast">
                 <h1>Top Billed Cast</h1>
+                <section className="movieDetails_castRow">
+                    {casts.map((cast, index) => (<Card id={index} castDetails={cast} />)).slice(0, 9)}
+                </section>
+
             </div>
 
 
