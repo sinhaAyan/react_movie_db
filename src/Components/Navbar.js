@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './navbar.css';
+import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-    return (
-        <div className="navbar">
-            <img className="navbar_logo"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSywyMDIMzmrnIMU17Vv6A-qlKFDf8NHbg8HQ&usqp=CAU"
-                alt="logo"
-            />
-            <img className="navbar_avatar"
-                src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
-                alt="avatar"
-            />
+    const [show, setShow] = useState(false);
 
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100)
+                setShow(true);
+            else
+                setShow(false);
+        });
+        return () => {
+            window.removeEventListener("scroll",);
+        };
+    }, []);
+    return (
+        <div className={`navbar ${show && "navbar_black"}`}>
+            <Link to='/'>
+                <HomeTwoToneIcon className="navbar_logo" />
+            </Link>
+
+            <AccountCircleIcon className="navbar_avatar" />
         </div>
     )
 }

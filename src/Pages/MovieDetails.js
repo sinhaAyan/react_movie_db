@@ -18,7 +18,6 @@ function MovieDetails({ match }) {
             setDetails(response.data);
 
             const castAndCrew = await axios.get(`movie/${params.id}/credits?api_key=${API_KEY}&language=en-US`);
-            //console.log(castAndCrew);
             setCasts(castAndCrew.data.cast);
             setCrews(castAndCrew.data.crew);
         }
