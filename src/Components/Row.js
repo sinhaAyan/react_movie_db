@@ -9,6 +9,7 @@ function Row({ title, fetchUrl }) {
     const base_URL = "https://image.tmdb.org/t/p/original/";
     const [movies, setMovies] = useState([]);
 
+
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(fetchUrl);
@@ -17,7 +18,11 @@ function Row({ title, fetchUrl }) {
         }
         fetchData();
     }, [fetchUrl]);
+
+
     //console.log(movies);
+
+
     return (
         <div className="row">
             <h2>{title}</h2>

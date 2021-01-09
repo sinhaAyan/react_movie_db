@@ -8,8 +8,6 @@ function Home() {
         <div>
             <Banner />
             {/* <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} /> */}
-            {/* <Row title="Tranding Now" fetchUrl={requests.fetchTrending} /> */}
-            <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
             <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
             <Row title="Adventure Movies" fetchUrl={requests.fetchAdventureMovies} />
             <Row title="Animation Movies" fetchUrl={requests.fetchAnimationMovies} />
@@ -20,6 +18,8 @@ function Home() {
             <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
             <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Thiller Movies" fetchUrl={requests.fetchThrillerMovies} />
+            <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+            <Row title="Tranding Now" fetchUrl={requests.fetchTrending} />
             <Row title="War Movies" fetchUrl={requests.fetchWarMovies} />
 
         </div>
